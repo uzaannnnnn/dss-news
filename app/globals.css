@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+.font-child {
+  font-family: var(--font-child), "Quicksand", sans-serif;
+}
+
+.font-teen {
+  font-family: var(--font-teen), "Poppins", sans-serif;
+}
+
+.font-adult {
+  font-family: var(--font-adult), "Inter", sans-serif;
+}
+
+.adult-scope {
+  --adult-body-size: 18px;
+  --adult-line-height: 1.7;
+  --adult-headline-size: 32px;
+  --adult-title-size: 28px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.adult-theme {
+  --adult-bg: #f7f3ed;
+  --adult-ink: #0f172a;
+  --adult-muted: #475569;
+  --adult-card: #ffffff;
+  --adult-border: rgba(15, 23, 42, 0.08);
+  --adult-accent: #b45309;
+  --adult-accent-soft: rgba(180, 83, 9, 0.14);
+}
+
+.adult-scope[data-font-size="small"] {
+  --adult-body-size: 16px;
+  --adult-line-height: 1.6;
+  --adult-headline-size: 28px;
+  --adult-title-size: 26px;
+}
+
+.adult-scope[data-font-size="large"] {
+  --adult-body-size: 20px;
+  --adult-line-height: 1.8;
+  --adult-headline-size: 36px;
+  --adult-title-size: 30px;
+}
+
+.adult-body {
+  font-size: var(--adult-body-size);
+  line-height: var(--adult-line-height);
+}
+
+.adult-headline {
+  font-size: var(--adult-headline-size);
+  line-height: 1.2;
+}
+
+.adult-title {
+  font-size: var(--adult-title-size);
+  line-height: 1.3;
+}
+
+.adult-card-title {
+  font-size: calc(var(--adult-title-size) * 0.72);
+  line-height: 1.25;
+}
+
+.adult-card-meta {
+  font-size: calc(var(--adult-body-size) * 0.6);
+}
+
+.adult-card-cta {
+  font-size: calc(var(--adult-body-size) * 0.65);
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 480ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.deco-float {
+  animation: decoFloat 6s ease-in-out infinite;
+}
+
+.deco-float-slow {
+  animation: decoFloat 10s ease-in-out infinite;
+}
+
+.deco-spin {
+  animation: decoSpin 14s linear infinite;
+}
+
+.deco-bob {
+  animation: decoBob 3.6s ease-in-out infinite;
+}
+
+.deco-pulse {
+  animation: decoPulse 4s ease-in-out infinite;
+}
+
+.kid-float {
+  animation: kidFloat 5.5s ease-in-out infinite;
+}
+
+.kid-float-slow {
+  animation: kidFloat 8s ease-in-out infinite;
+}
+
+.kid-bounce {
+  animation: kidBounce 3.6s ease-in-out infinite;
+}
+
+.kid-spin {
+  animation: kidSpin 12s linear infinite;
+}
+
+.kid-wiggle {
+  animation: kidWiggle 2.6s ease-in-out infinite;
+}
+
+.progress-bar {
+  animation: progressSlide 1.6s ease-in-out infinite;
+}
+
+.adult-grid-glow {
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(200, 227, 255, 0.65),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(213, 230, 255, 0.8),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(255, 255, 255, 0.7),
+      transparent 60%
+    );
+  filter: blur(8px);
+  animation: adultGlow 12s ease-in-out infinite;
+}
+
+@keyframes decoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes decoSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes decoBob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(6px) scale(1.03);
+  }
+}
+
+@keyframes decoPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes kidFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes kidBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(8px) scale(1.03);
+  }
+}
+
+@keyframes kidSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kidWiggle {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes adultGlow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(12px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes progressSlide {
+  0% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(70%);
+  }
+}
